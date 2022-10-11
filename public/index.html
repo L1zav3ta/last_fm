@@ -1,37 +1,436 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+<head>
+    <meta charset="utf-8"/>
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="theme-color" content="#000000"/>
+    <meta name="description" content="Web site created using create-react-app"/>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <title>Last.fm</title>
+</head>
+<body class="app">
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+<header class="header">
+    <div class="header__player">
+        <img src="player_default_album.png" alt="player_default_album">
+        <ul class="header__player__panel">
+            <li class="header__player__panel_item">
+                <button class="button_transparent">
+                    <i class="material-icons header__player__panel__button__i" style="font-size: 22px">fast_rewind</i>
+                </button>
+            </li>
+            <li class="header__player__panel_item">
+                <button class="button_transparent">
+                    <i class="material-icons header__player__panel__button__i" style="font-size: 36px">play_circle_outline</i>
+                </button>
+            </li>
+            <li class="header__player__panel_item">
+                <button class="button_transparent">
+                    <i class="material-icons header__player__panel__button__i" style="font-size: 22px">fast_forward</i>
+                </button>
+            </li>
+            <li class="header__player__panel_item">
+                <button class="button_transparent">
+                    <i class="material-icons header__player__panel__button__i" style="font-size: 16px">favorite_border</i>
+                </button>
+            </li>
+        </ul>
+    </div>
+    <div class="header__logo">
+        <a href="/" class="link"><img class="header__logo__img-last-fm" src="logo.png" alt="last.fm"></a>
+    </div>
+    <div class="header__nav">
+        <a class="link" href="search_page.html">
+            <img class="header__nav___img-search" src="search.png" alt="search">
+        </a>
+        <nav>
+            <ul class="header__nav-list">
+                <li class="header__nav-item"><a href="/" class="header__link">Home</a></li>
+                <li class="header__nav-item"><a href="/" class="header__link">Live</a></li>
+                <li class="header__nav-item"><a href="/" class="header__link">Music</a></li>
+                <li class="header__nav-item"><a href="/" class="header__link">Charts</a></li>
+                <li class="header__nav-item"><a href="/" class="header__link">Events</a></li>
+                <li class="header__nav-item"><a href="/" class="header__link">Features</a></li>
+            </ul>
+        </nav>
+        <img class="avatar avatar-profile" src="avatar.png" alt="Profile avatar">
+    </div>
+</header>
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+<main class="main">
+    <div class="container">
+        <h1 class="main__title">Music</h1>
+        <section class="main__section">
+            <h2 class="main__title">Hot right now</h2>
+            <ul class="main__artists-list">
+                <li class="main__artists-item">
+                    <img class="avatar avatar-artist" src="avatar.png" alt="Artist avatar">
+                    <h3 class="artist-name">Kanye West</h3>
+                    <ul>
+                        <li class="musical-genre">hip-hop</li>
+                        <li class="musical-genre">rap</li>
+                    </ul>
+                </li>
+                <li class="main__artists-item">
+                    <img class="avatar avatar-artist" src="avatar.png" alt="Artist avatar">
+                    <h3 class="artist-name">Kanye West</h3>
+                    <ul>
+                        <li class="musical-genre">hip-hop</li>
+                        <li class="musical-genre">rap</li>
+                    </ul>
+                </li>
+                <li class="main__artists-item">
+                    <img class="avatar avatar-artist" src="avatar.png" alt="Artist avatar">
+                    <h3 class="artist-name">Kanye West</h3>
+                    <ul>
+                        <li class="musical-genre">hip-hop</li>
+                        <li class="musical-genre">rap</li>
+                    </ul>
+                </li>
+                <li class="main__artists-item">
+                    <img class="avatar avatar-artist" src="avatar.png" alt="Artist avatar">
+                    <h3 class="artist-name">Kanye West</h3>
+                    <ul>
+                        <li class="musical-genre">hip-hop</li>
+                        <li class="musical-genre">rap</li>
+                    </ul>
+                </li>
+                <li class="main__artists-item">
+                    <img class="avatar avatar-artist" src="avatar.png" alt="Artist avatar">
+                    <h3 class="artist-name">Kanye West</h3>
+                    <ul>
+                        <li class="musical-genre">hip-hop</li>
+                        <li class="musical-genre">rap</li>
+                    </ul>
+                </li>
+                <li class="main__artists-item">
+                    <img class="avatar avatar-artist" src="avatar.png" alt="Artist avatar">
+                    <h3 class="artist-name">Kanye West</h3>
+                    <ul>
+                        <li class="musical-genre">hip-hop</li>
+                        <li class="musical-genre">rap</li>
+                    </ul>
+                </li>
+                <li class="main__artists-item">
+                    <img class="avatar avatar-artist" src="avatar.png" alt="Artist avatar">
+                    <h3 class="artist-name">Kanye West</h3>
+                    <ul>
+                        <li class="musical-genre">hip-hop</li>
+                        <li class="musical-genre">rap</li>
+                    </ul>
+                </li>
+                <li class="main__artists-item">
+                    <img class="avatar avatar-artist" src="avatar.png" alt="Artist avatar">
+                    <h3 class="artist-name">Kanye West</h3>
+                    <ul>
+                        <li class="musical-genre">hip-hop</li>
+                        <li class="musical-genre">rap</li>
+                    </ul>
+                </li>
+                <li class="main__artists-item">
+                    <img class="avatar avatar-artist" src="avatar.png" alt="Artist avatar">
+                    <h3 class="artist-name">Kanye West</h3>
+                    <ul>
+                        <li class="musical-genre">hip-hop</li>
+                        <li class="musical-genre">rap</li>
+                    </ul>
+                </li>
+                <li class="main__artists-item">
+                    <img class="avatar avatar-artist" src="avatar.png" alt="Artist avatar">
+                    <h3 class="artist-name">Kanye West</h3>
+                    <ul>
+                        <li class="musical-genre">hip-hop</li>
+                        <li class="musical-genre">rap</li>
+                    </ul>
+                </li>
+                <li class="main__artists-item">
+                    <img class="avatar avatar-artist" src="avatar.png" alt="Artist avatar">
+                    <h3 class="artist-name">Kanye West</h3>
+                    <ul>
+                        <li class="musical-genre">hip-hop</li>
+                        <li class="musical-genre">rap</li>
+                    </ul>
+                </li>
+                <li class="main__artists-item">
+                    <img class="avatar avatar-artist" src="avatar.png" alt="Artist avatar">
+                    <h3 class="artist-name">Kanye West</h3>
+                    <ul>
+                        <li class="musical-genre">hip-hop</li>
+                        <li class="musical-genre">rap</li>
+                    </ul>
+                </li>
+                <li class="main__artists-item">
+                    <img class="avatar avatar-artist" src="avatar.png" alt="Artist avatar">
+                    <h3 class="artist-name">Kanye West</h3>
+                    <ul>
+                        <li class="musical-genre">hip-hop</li>
+                        <li class="musical-genre">rap</li>
+                    </ul>
+                </li>
+                <li class="main__artists-item">
+                    <img class="avatar avatar-artist" src="avatar.png" alt="Artist avatar">
+                    <h3 class="artist-name">Kanye West</h3>
+                    <ul>
+                        <li class="musical-genre">hip-hop</li>
+                        <li class="musical-genre">rap</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+        <sectidon class="main__section">
+            <h2 class="main__title">Popular tracks</h2>
+            <ul class="main__tracks-list">
+                <li class="main__tracks-item">
+                    <img class="track-img" src="avatar.png" alt="avatar">
+                    <div class="track-description">
+                        <h3 class="track-name">This Is Why</h3>
+                        <p class="track-artist-name">Paramore</p>
+                        <ul>
+                            <li class="musical-genre">hip-hop</li>
+                            <li class="musical-genre">rap</li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="main__tracks-item">
+                    <img class="track-img" src="avatar.png" alt="avatar">
+                    <div class="track-description">
+                        <h3 class="track-name">This Is Why</h3>
+                        <p class="track-artist-name">Paramore</p>
+                        <ul>
+                            <li class="musical-genre">hip-hop</li>
+                            <li class="musical-genre">rap</li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="main__tracks-item">
+                    <img class="track-img" src="avatar.png" alt="avatar">
+                    <div class="track-description">
+                        <h3 class="track-name">This Is Why</h3>
+                        <p class="track-artist-name">Paramore</p>
+                        <ul>
+                            <li class="musical-genre">hip-hop</li>
+                            <li class="musical-genre">rap</li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="main__tracks-item">
+                    <img class="track-img" src="avatar.png" alt="avatar">
+                    <div class="track-description">
+                        <h3 class="track-name">This Is Why</h3>
+                        <p class="track-artist-name">Paramore</p>
+                        <ul>
+                            <li class="musical-genre">hip-hop</li>
+                            <li class="musical-genre">rap</li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="main__tracks-item">
+                    <img class="track-img" src="avatar.png" alt="avatar">
+                    <div class="track-description">
+                        <h3 class="track-name">This Is Why</h3>
+                        <p class="track-artist-name">Paramore</p>
+                        <ul>
+                            <li class="musical-genre">hip-hop</li>
+                            <li class="musical-genre">rap</li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="main__tracks-item">
+                    <img class="track-img" src="avatar.png" alt="avatar">
+                    <div class="track-description">
+                        <h3 class="track-name">This Is Why</h3>
+                        <p class="track-artist-name">Paramore</p>
+                        <ul>
+                            <li class="musical-genre">hip-hop</li>
+                            <li class="musical-genre">rap</li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="main__tracks-item">
+                    <img class="track-img" src="avatar.png" alt="avatar">
+                    <div class="track-description">
+                        <h3 class="track-name">This Is Why</h3>
+                        <p class="track-artist-name">Paramore</p>
+                        <ul>
+                            <li class="musical-genre">hip-hop</li>
+                            <li class="musical-genre">rap</li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="main__tracks-item">
+                    <img class="track-img" src="avatar.png" alt="avatar">
+                    <div class="track-description">
+                        <h3 class="track-name">This Is Why</h3>
+                        <p class="track-artist-name">Paramore</p>
+                        <ul>
+                            <li class="musical-genre">hip-hop</li>
+                            <li class="musical-genre">rap</li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="main__tracks-item">
+                    <img class="track-img" src="avatar.png" alt="avatar">
+                    <div class="track-description">
+                        <h3 class="track-name">This Is Why</h3>
+                        <p class="track-artist-name">Paramore</p>
+                        <ul>
+                            <li class="musical-genre">hip-hop</li>
+                            <li class="musical-genre">rap</li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="main__tracks-item">
+                    <img class="track-img" src="avatar.png" alt="avatar">
+                    <div class="track-description">
+                        <h3 class="track-name">This Is Why</h3>
+                        <p class="track-artist-name">Paramore</p>
+                        <ul>
+                            <li class="musical-genre">hip-hop</li>
+                            <li class="musical-genre">rap</li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="main__tracks-item">
+                    <img class="track-img" src="avatar.png" alt="avatar">
+                    <div class="track-description">
+                        <h3 class="track-name">This Is Why</h3>
+                        <p class="track-artist-name">Paramore</p>
+                        <ul>
+                            <li class="musical-genre">hip-hop</li>
+                            <li class="musical-genre">rap</li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="main__tracks-item">
+                    <img class="track-img" src="avatar.png" alt="avatar">
+                    <div class="track-description">
+                        <h3 class="track-name">This Is Why</h3>
+                        <p class="track-artist-name">Paramore</p>
+                        <ul>
+                            <li class="musical-genre">hip-hop</li>
+                            <li class="musical-genre">rap</li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="main__tracks-item">
+                    <img class="track-img" src="avatar.png" alt="avatar">
+                    <div class="track-description">
+                        <h3 class="track-name">This Is Why</h3>
+                        <p class="track-artist-name">Paramore</p>
+                        <ul>
+                            <li class="musical-genre">hip-hop</li>
+                            <li class="musical-genre">rap</li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="main__tracks-item">
+                    <img class="track-img" src="avatar.png" alt="avatar">
+                    <div class="track-description">
+                        <h3 class="track-name">This Is Why</h3>
+                        <p class="track-artist-name">Paramore</p>
+                        <ul>
+                            <li class="musical-genre">hip-hop</li>
+                            <li class="musical-genre">rap</li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="main__tracks-item">
+                    <img class="track-img" src="avatar.png" alt="avatar">
+                    <div class="track-description">
+                        <h3 class="track-name">This Is Why</h3>
+                        <p class="track-artist-name">Paramore</p>
+                        <ul>
+                            <li class="musical-genre">hip-hop</li>
+                            <li class="musical-genre">rap</li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </div>
+</main>
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+<footer class="footer">
+    <div class="footer__top">
+        <div class="footer__top__row">
+            <ul class="footer__top__col">
+                <h2 class="footer__top__col__title">Company</h2>
+                <li><a href="/" class="link">About last.fm</a></li>
+                <li><a href="/" class="link">Contact us</a></li>
+                <li><a href="/" class="link">Jobs</a></li>
+            </ul>
+            <ul class="footer__top__col">
+                <h2 class="footer__top__col__title">Company</h2>
+                <li><a href="/" class="link">About last.fm</a></li>
+                <li><a href="/" class="link">Contact as</a></li>
+                <li><a href="/" class="link">Jobs</a></li>
+            </ul>
+            <ul class="footer__top__col">
+                <h2 class="footer__top__col__title">Company</h2>
+                <li><a href="/" class="link">About last.fm</a></li>
+                <li><a href="/" class="link">Contact as</a></li>
+                <li><a href="/" class="link">Jobs</a></li>
+            </ul>
+            <ul class="footer__top__col">
+                <h2 class="footer__top__col__title">Company</h2>
+                <li><a href="/" class="link">About last.fm</a></li>
+                <li><a href="/" class="link">Contact as</a></li>
+                <li><a href="/" class="link">Jobs</a></li>
+            </ul>
+            <ul class="footer__top__col">
+                <h2 class="footer__top__col__title">Company</h2>
+                <li><a href="/" class="link">About last.fm</a></li>
+                <li><a href="/" class="link">Contact as</a></li>
+                <li><a href="/" class="link">Jobs</a></li>
+            </ul>
+        </div>
+    </div>
+    <hr color="#666" style="height: 1px; border: none;"/>
+    <div class="footer__bottom">
+        <div class="footer__bottom__row">
+            <div class="footer__bottom__row__info">
+                <ul class="footer__bottom__language-list">
+                    <li class="footer__bottom__language-item link">English</li>
+                    <li class="footer__bottom__language-item link">Deutsch</li>
+                    <li class="footer__bottom__language-item link">Español</li>
+                    <li class="footer__bottom__language-item link">Français</li>
+                    <li class="footer__bottom__language-item link">Italiano</li>
+                    <li class="footer__bottom__language-item link">日本語</li>
+                    <li class="footer__bottom__language-item link">Polski</li>
+                    <li class="footer__bottom__language-item link">Português</li>
+                    <li class="footer__bottom__language-item link">Русский</li>
+                    <li class="footer__bottom__language-item link">Svenska</li>
+                    <li class="footer__bottom__language-item link">Türkçe</li>
+                    <li class="footer__bottom__language-item link">简体中文</li>
+                </ul>
+                <p class="footer__bottom__timezone">
+                    <span style="color: #666">Time zone:
+                        <strong style="color: aliceblue">Europe/Moscow</strong>
+                    </span>
+                </p>
+                <div>
+                    <ul class="footer__bottom__legal-list">
+                        <li class="footer__bottom__legal-item"><a href="/" class="link">CBS Interactive </a></li>
+                        <li class="footer__bottom__legal-item">© 2022 Last.fm Ltd. All rights reserved</li>
+                        <li class="footer__bottom__legal-item"><a href="/" class="link">Terms of Use</a></li>
+                        <li class="footer__bottom__legal-item"><a href="/" class="link">Privacy Policy</a></li>
+                        <li class="footer__bottom__legal-item"><a href="/" class="link">Legal Policies</a></li>
+                        <li class="footer__bottom__legal-item"><a href="/" class="link">Cookies Policy</a></li>
+                        <li class="footer__bottom__legal-item"><a href="/" class="link">Cookie Information</a></li>
+                        <li class="footer__bottom__legal-item"><a href="/" class="link">Jobs at ViacomCBS</a></li>
+                        <li class="footer__bottom__legal-item"><a href="/" class="link">Last.fm Music</a></li>
+                    </ul>
+                    <p class="footer__bottom__legal-wiki">Some user-contributed text on this page is available under the <a href="/" class="link">Creative Commons Attribution-ShareAlike License;</a> additional terms may apply.</p>
+                </div>
+            </div>
+            <div class="footer__bottom__row__logo">
+                <p>Audioscrobbler</p>
+                <img class="footer__bottom__row__logo__img" src="footer_logo.png" alt="footer_logo">
+            </div>
+    </div>
+</footer>
+</body>
 </html>
