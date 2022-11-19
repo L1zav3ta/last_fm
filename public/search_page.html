@@ -10,6 +10,7 @@
     <!-- Icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <title>Last.fm</title>
+    <script type="module" src="./search_page.js" defer></script>
 </head>
 <body class="app">
 
@@ -60,8 +61,9 @@
 
 <main class="main">
     <div class="container">
-        <section class="main__section">
-            <h1 class="main__search-title">Search results for “never gonna”</h1>
+        <section class="main__section" style="display: none;">
+            <h1 class="main__search-title">Search results for 
+                <span id="search-value"></span> </h1>
             <nav>
                 <ul class="main__search-nav-list">
                     <li class="main__search_nav-item"><a href="/">Top Results</a></li>
@@ -85,171 +87,22 @@
                         <img class="button__search-img" src="button_search.png">
                     </button>
                 </form>
-                <section class="main__section">
+                <section class="main__section" style="display: none;">
                     <h2 class="main__search-content__title"><a href="/" class="link">Artists</a></h2>
-                    <ul class="main__search-content__block-list">
-                        <li class="main__search-content__block-item">
-                            <a class="main__search-content__block-title link">Artist Name</a>
-                            <a class="main__search-content__block-subtitle link">1 listener</a>
-                            <img class="main__search-content__block-img" src="search_artist.png" alt="Image for 'No One's Gonna Love You (Paul Epworth Mix)">
-                        </li>
-                        <li class="main__search-content__block-item">
-                            <a class="main__search-content__block-title link">Artist Name</a>
-                            <a class="main__search-content__block-subtitle link">1 listener</a>
-                            <img class="main__search-content__block-img" src="search_artist.png" alt="Image for 'No One's Gonna Love You (Paul Epworth Mix)">
-                        </li>
-                        <li class="main__search-content__block-item">
-                            <a class="main__search-content__block-title link">Artist Name</a>
-                            <a class="main__search-content__block-subtitle link">1 listener</a>
-                            <img class="main__search-content__block-img" src="search_artist.png" alt="Image for 'No One's Gonna Love You (Paul Epworth Mix)">
-                        </li>
-                        <li class="main__search-content__block-item">
-                            <a class="main__search-content__block-title link">Artist Name</a>
-                            <a class="main__search-content__block-subtitle link">1 listener</a>
-                            <img class="main__search-content__block-img" src="search_artist.png" alt="Image for 'No One's Gonna Love You (Paul Epworth Mix)">
-                        </li>
-                        <li class="main__search-content__block-item">
-                            <a class="main__search-content__block-title link">Artist Name</a>
-                            <a class="main__search-content__block-subtitle link">1 listener</a>
-                            <img class="main__search-content__block-img" src="search_artist.png" alt="Image for 'No One's Gonna Love You (Paul Epworth Mix)">
-                        </li>
-                    </ul>
-                    <a class="main__search-content__more-link link" href="/">More artists</a>
+                    <ul id="searchArtistList" class="main__search-content__block-list"></ul>
+                    <a id="moreArtist" class="main__search-content__more-link link" href="/">More artists</a>
                 </section>
-                <section class="main__section">
+                <section class="main__section" style="display: none;">
                     <h2 class="main__search-content__title"><a href="/" class="link">Albums</a></h2>
-                    <ul class="main__search-content__block-list">
-                        <li class="main__search-content__block-item">
-                            <a class="main__search-content__block-title link">Track Name</a>
-                            <a class="main__search-content__block-subtitle link">Album</a>
-                            <img class="main__search-content__block-img" src="search_artist.png" alt="Image for 'No One's Gonna Love You (Paul Epworth Mix)">
-                        </li>
-                        <li class="main__search-content__block-item">
-                            <a class="main__search-content__block-title link">Track Name</a>
-                            <a class="main__search-content__block-subtitle link">Album</a>
-                            <img class="main__search-content__block-img" src="search_artist.png" alt="Image for 'No One's Gonna Love You (Paul Epworth Mix)">
-                        </li>
-                        <li class="main__search-content__block-item">
-                            <a class="main__search-content__block-title link">Track Name</a>
-                            <a class="main__search-content__block-subtitle link">Album</a>
-                            <img class="main__search-content__block-img" src="search_artist.png" alt="Image for 'No One's Gonna Love You (Paul Epworth Mix)">
-                        </li>
-                        <li class="main__search-content__block-item">
-                            <a class="main__search-content__block-title link">Track Name</a>
-                            <a class="main__search-content__block-subtitle link">Album</a>
-                            <img class="main__search-content__block-img" src="search_artist.png" alt="Image for 'No One's Gonna Love You (Paul Epworth Mix)">
-                        </li>
-                        <li class="main__search-content__block-item">
-                            <a class="main__search-content__block-title link">Track Name</a>
-                            <a class="main__search-content__block-subtitle link">Album</a>
-                            <img class="main__search-content__block-img" src="search_artist.png" alt="Image for 'No One's Gonna Love You (Paul Epworth Mix)">
-                        </li>
-                    </ul>
-                    <a class="main__search-content__more-link link" href="/">More albums</a>
+                    <ul id="searchAlbumList" class="main__search-content__block-list"></ul>
+                    <a id="moreAlbums" class="main__search-content__more-link link" href="/">More albums</a>
                 </section>
-                <section class="main__section">
+                <section class="main__section" style="display: none;">
                     <h2 class="main__search-content__title"><a href="/" class="link">Tracks</a></h2>
                     <table class="main__search-content__track-table">
-                        <tbody>
-                            <tr class="table__bottom__border">
-                                <td class="main__search-content__track-table__play">
-                                    <i class="material-icons" style="font-size: 36px; color: #999;">play_circle_filled</i>
-                                </td>
-                                <td class="main__search-content__track-table__music">
-                                    <img class="main__search-content__track-table__music-img" src="music.jpg">
-                                </td>
-                                <td class="main__search-content__track-table__favorite">
-                                    <i class="material-icons" style="font-size: 16px; color: #999">favorite_border</i>
-                                </td>
-                                <td class="main__search-content__track-table__music-name">
-                                    <a class="link">Music name</a>
-                                </td>
-                                <td><a class="link">Artist name</a></td>
-                                <td class="main__search-content__track-table__duration">3:14</td>
-                            </tr>
-                            <tr class="table__bottom__border">
-                                <td class="main__search-content__track-table__play">
-                                    <i class="material-icons" style="font-size: 36px; color: #999;">play_circle_filled</i>
-                                </td>
-                                <td class="main__search-content__track-table__music">
-                                    <img class="main__search-content__track-table__music-img" src="music.jpg">
-                                </td>
-                                <td class="main__search-content__track-table__favorite">
-                                    <i class="material-icons" style="font-size: 16px; color: #999">favorite_border</i>
-                                </td>
-                                <td class="main__search-content__track-table__music-name">
-                                    <a class="link">Music name</a>
-                                </td>
-                                <td><a class="link">Artist name</a></td>
-                                <td class="main__search-content__track-table__duration">3:14</td>
-                            </tr>
-                            <tr class="table__bottom__border">
-                                <td class="main__search-content__track-table__play">
-                                    <i class="material-icons" style="font-size: 36px; color: #999;">play_circle_filled</i>
-                                </td>
-                                <td class="main__search-content__track-table__music">
-                                    <img class="main__search-content__track-table__music-img" src="music.jpg">
-                                </td>
-                                <td class="main__search-content__track-table__favorite">
-                                    <i class="material-icons" style="font-size: 16px; color: #999">favorite_border</i>
-                                </td>
-                                <td class="main__search-content__track-table__music-name">
-                                    <a class="link">Music name</a>
-                                </td>
-                                <td><a class="link">Artist name</a></td>
-                                <td class="main__search-content__track-table__duration">3:14</td>
-                            </tr>
-                            <tr class="table__bottom__border">
-                                <td class="main__search-content__track-table__play">
-                                    <i class="material-icons" style="font-size: 36px; color: #999;">play_circle_filled</i>
-                                </td>
-                                <td class="main__search-content__track-table__music">
-                                    <img class="main__search-content__track-table__music-img" src="music.jpg">
-                                </td>
-                                <td class="main__search-content__track-table__favorite">
-                                    <i class="material-icons" style="font-size: 16px; color: #999">favorite_border</i>
-                                </td>
-                                <td class="main__search-content__track-table__music-name">
-                                    <a class="link">Music name</a>
-                                </td>
-                                <td><a class="link">Artist name</a></td>
-                                <td class="main__search-content__track-table__duration">3:14</td>
-                            </tr>
-                            <tr class="table__bottom__border">
-                                <td class="main__search-content__track-table__play">
-                                    <i class="material-icons" style="font-size: 36px; color: #999;">play_circle_filled</i>
-                                </td>
-                                <td class="main__search-content__track-table__music">
-                                    <img class="main__search-content__track-table__music-img" src="music.jpg">
-                                </td>
-                                <td class="main__search-content__track-table__favorite">
-                                    <i class="material-icons" style="font-size: 16px; color: #999">favorite_border</i>
-                                </td>
-                                <td class="main__search-content__track-table__music-name">
-                                    <a class="link">Music name</a>
-                                </td>
-                                <td><a class="link">Artist name</a></td>
-                                <td class="main__search-content__track-table__duration">3:14</td>
-                            </tr>
-                            <tr class="table__bottom__border">
-                                <td class="main__search-content__track-table__play">
-                                    <i class="material-icons" style="font-size: 36px; color: #999;">play_circle_filled</i>
-                                </td>
-                                <td class="main__search-content__track-table__music">
-                                    <img class="main__search-content__track-table__music-img" src="music.jpg">
-                                </td>
-                                <td class="main__search-content__track-table__favorite">
-                                    <i class="material-icons" style="font-size: 16px; color: #999">favorite_border</i>
-                                </td>
-                                <td class="main__search-content__track-table__music-name">
-                                    <a class="link">Music name</a>
-                                </td>
-                                <td><a class="link">Artist name</a></td>
-                                <td class="main__search-content__track-table__duration">3:14</td>
-                            </tr>
-                        </tbody>
+                        <tbody id="trackTable"></tbody>
                     </table>
-                    <a class="main__search-content__more-link link" href="/">More tracks</a>
+                    <a id="moreTracks" class="main__search-content__more-link link" href="/">More tracks</a>
                 </section>
             </div>
             <div class="main__search-content__right-side">
