@@ -10,7 +10,7 @@
     <!-- Icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <title>Last.fm</title>
-    <script src="Search.js" defer></script>
+    <script type="module" src="./search.js" defer></script>
 </head>
 <body class="app">
 
@@ -61,8 +61,9 @@
 
 <main class="main">
     <div class="container">
-        <section class="main__section">
-            <h1 class="main__search-title">Search results for “never gonna”</h1>
+        <section class="main__section" style="display: none;">
+            <h1 class="main__search-title">Search results for 
+                <span id="search-value"></span> </h1>
             <nav>
                 <ul class="main__search-nav-list">
                     <li class="main__search_nav-item"><a href="/">Top Results</a></li>
@@ -86,22 +87,22 @@
                         <img class="button__search-img" src="button_search.png">
                     </button>
                 </form>
-                <section class="main__section">
+                <section class="main__section" style="display: none;">
                     <h2 class="main__search-content__title"><a href="/" class="link">Artists</a></h2>
                     <ul id="searchArtistList" class="main__search-content__block-list"></ul>
-                    <a class="main__search-content__more-link link" href="/">More artists</a>
+                    <a id="moreArtist" class="main__search-content__more-link link" href="/">More artists</a>
                 </section>
-                <section class="main__section">
+                <section class="main__section" style="display: none;">
                     <h2 class="main__search-content__title"><a href="/" class="link">Albums</a></h2>
                     <ul id="searchAlbumList" class="main__search-content__block-list"></ul>
-                    <a class="main__search-content__more-link link" href="/">More albums</a>
+                    <a id="moreAlbums" class="main__search-content__more-link link" href="/">More albums</a>
                 </section>
-                <section class="main__section">
+                <section class="main__section" style="display: none;">
                     <h2 class="main__search-content__title"><a href="/" class="link">Tracks</a></h2>
                     <table class="main__search-content__track-table">
                         <tbody id="trackTable"></tbody>
                     </table>
-                    <a class="main__search-content__more-link link" href="/">More tracks</a>
+                    <a id="moreTracks" class="main__search-content__more-link link" href="/">More tracks</a>
                 </section>
             </div>
             <div class="main__search-content__right-side">
