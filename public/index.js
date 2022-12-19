@@ -8,7 +8,7 @@ import { API_KEY, API_URL, MAX_ARTISTS, MAX_TRACKS } from './modules/const.js';
  */
 function createGenreUl() {
     let ul = document.createElement('ul');
-    ul.className = 'musical-genre-list';
+    ul.classNameName = 'musical-genre-list';
     return ul;
 }
 
@@ -43,8 +43,8 @@ async function addArtistsToUI(item) {
     }
 
     const template = `
-        <img class="avatar avatar-artist" src="${imgSrc}" alt="Artist avatar">
-        <h3 class="artist-name">${item.name}</h3>
+        <img className="avatar avatar-artist" src="${imgSrc}" alt="Artist avatar"/>
+        <h3 className="artist-name">${item.name}</h3>
     `;
 
     const child = createElementWithContent(template, 'li', 'main__artists-item');
@@ -71,12 +71,12 @@ async function addTracksToUI(item) {
     }
 
     const trackContent = `
-        <img class="track-img" src="${imgSrc}" alt="avatar">
+        <img className="track-img" src="${imgSrc}" alt="avatar">
     `;
 
     const divContent = `
-        <h3 class="track-name">${trackName}</h3>
-        <p class="track-artist-name">${artistName}</p>
+        <h3 className="track-name">${trackName}</h3>
+        <p className="track-artist-name">${artistName}</p>
     `;
 
     const trackContentHTML = createElementWithContent(trackContent, 'li', 'main__tracks-item');
