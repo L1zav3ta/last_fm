@@ -141,21 +141,21 @@ export const Search = () => {
                                 artists={searchData.artists}
                             />
                             : (value && !searchData.artists.length)? 
-                                <NotResults/>  : <></>
+                                <NotResults section="artists"/>  : <></>
                         }
                         {searchData.albums.length? 
                             <AlbumsList
                                 albums={searchData.albums}
                             />
                             : (value && !searchData.albums.length)? 
-                                <NotResults/>  : <></>
+                                <NotResults section="albums"/>  : <></>
                         }
                         {searchData.tracks.length? 
                             <TracksList
                                 tracks={searchData.tracks}
                             />
                             : (value && !searchData.tracks.length)? 
-                                <NotResults/>  : <></>
+                                <NotResults section="tracks"/>  : <></>
                         } 
                     </div>
                     <div className="main__search-content__right-side">
