@@ -11,15 +11,15 @@ export const ArtistsList = () => {
         fetchArtists()
         .then(
             (result) => {
-                if (!result) return
+                if (!result) return;
                 const artistsData = result.map((item: {name: string, image: any}) => {
                     const artist: TArtist = {
                         artistName: item.name,
                         artistImgSrc: item.image[0]['#text']
-                    }
-                    return artist
-                })
-                setArtists(artistsData)
+                    };
+                    return artist;
+                });
+                setArtists(artistsData);
             }
         );
     }, []);

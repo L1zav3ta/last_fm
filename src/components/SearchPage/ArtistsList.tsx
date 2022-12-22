@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 import { TArtist } from "../../types/TArtist";
-import { Content } from "./Content"
+import { Content } from "./Content";
 
 
 interface IArtistsSearch {
@@ -24,5 +24,5 @@ export const ArtistsList = (props: IArtistsSearch) => {
             </ul>
             <Link to="/" id="moreArtist" className="main__search-content__more-link link">More artists</Link>
         </section>
-    )
+    );
 };

@@ -4,8 +4,8 @@ import { TGenre } from "../../types/TGenre";
 import { Genre } from "./Genre";
 
 interface IGenresListProps {
-    artistName: string,
-    trackName?: string,
+    artistName: string;
+    trackName?: string;
 };
 
 export const GenresList = (props: IGenresListProps) => {
@@ -13,7 +13,7 @@ export const GenresList = (props: IGenresListProps) => {
     const [genres, setGenres] = useState<TGenre[]>([]);
 
     useEffect(() => {
-        const fetchFunc = trackName ? fetchTrackGenres(artistName, trackName) : fetchArtistGenres(artistName)
+        const fetchFunc = trackName ? fetchTrackGenres(artistName, trackName) : fetchArtistGenres(artistName);
         fetchFunc
         .then(
             (result) => {
@@ -22,9 +22,9 @@ export const GenresList = (props: IGenresListProps) => {
                     const genre: TGenre = {
                         genreName: item.name,
                     }
-                    return genre
+                    return genre;
                 })
-                setGenres(genresData)
+                setGenres(genresData);
             }
         );
     }, []);

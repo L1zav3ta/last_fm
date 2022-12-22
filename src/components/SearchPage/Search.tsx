@@ -166,5 +166,5 @@ export const Search = () => {
                 </div>
             </div>
         </main>
-    )
+    );
 };

@@ -11,16 +11,16 @@ export const TracksList = () => {
         fetchTracks()
         .then(
             (result) => {
-                if (!result) return
+                if (!result) return;
                 const tracksData = result.map((item: {name: string, image: any, artist: {name: string}}) => {
                     const track: TTrack = {
                         trackName: item.name,
                         trackImgSrc: item.image[0]['#text'],
                         artistName: item.artist.name,
                     }
-                    return track
+                    return track;
                 })
-                setTracks(tracksData)
+                setTracks(tracksData);
             }
         );
     }, []);

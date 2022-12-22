@@ -2,9 +2,9 @@ import { GenresList } from "../Genre/GenresList";
 
 
 interface ITrackProps {
-    trackName: string,
-    trackImgSrc: string,
-    artistName: string,
+    trackName: string;
+    trackImgSrc: string;
+    artistName: string;
 };
 
 export const Track = (props: ITrackProps) => {

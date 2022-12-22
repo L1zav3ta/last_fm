@@ -1,7 +1,7 @@
-import logo from './images/logo.png'
-import player from './images/player_default_album.png'
-import search from './images/search.png'
-import avatar from './images/avatar.png'
+import logo from './images/logo.png';
+import player from './images/player_default_album.png';
+import search from './images/search.png';
+import avatar from './images/avatar.png';
 
 import { Link } from 'react-router-dom';
 
@@ -61,5 +61,5 @@ export const Header = () => {
                 <img className="avatar avatar-profile" src={avatar} alt="Profile avatar"/>
             </nav>
         </header>
-    )
+    );
 }

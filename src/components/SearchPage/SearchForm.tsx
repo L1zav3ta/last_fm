@@ -1,5 +1,5 @@
-import searchBtn from './images/button_search.png'
-import resetBtn from './images/button_reset.png'
+import searchBtn from './images/button_search.png';
+import resetBtn from './images/button_reset.png';
 import { useState } from 'react';
 
 
@@ -43,5 +43,5 @@ export const SearchForm = (props: ISearchData) => {
                 <img alt='seatch_btn' className="button__search-img" src={searchBtn}/>
             </button>
         </form>
-    )
+    );
 };

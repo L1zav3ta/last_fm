@@ -1,5 +1,5 @@
-import { ArtistsList } from "../IndexPage/ArtistsList"
-import { TracksList } from "../IndexPage/TracksList"
+import { ArtistsList } from "../IndexPage/ArtistsList";
+import { TracksList } from "../IndexPage/TracksList";
 
 export const Main = () => {
     return (
@@ -16,5 +16,5 @@ export const Main = () => {
                 </section>
             </div>
         </main>
-    )
+    );
 };
