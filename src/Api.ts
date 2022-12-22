@@ -17,6 +17,11 @@ async function fetchAPI(url: string) {
 	return data;
 };
 
+
+/**
+ * Fitchs artists.
+ * @returns fetched artists data.
+ */
 export async function fetchArtists() {
     try {
         const data = await fetchAPI(`${API_URL}?method=chart.gettopartists&api_key=${API_KEY}&limit=${MAX_ARTISTS}&format=json`);
@@ -26,6 +31,11 @@ export async function fetchArtists() {
     }
 };
 
+
+/**
+ * Fitchs tracks.
+ * @returns fetched tracks data.
+ */
 export async function fetchTracks () {
     try {
         const data = await fetchAPI(`${API_URL}?method=chart.gettoptracks&api_key=${API_KEY}&limit=${MAX_TRACKS}&format=json`);
@@ -35,6 +45,13 @@ export async function fetchTracks () {
     }
 };
 
+
+/**
+ * Fitchs track genres.
+ * @param artistName - artist name.
+ * @param trackName - track name.
+ * @returns fetched track genres.
+ */
 export async function fetchTrackGenres (artistName:string, trackName: string) {
     try {
         const data = await fetchAPI(`${API_URL}?method=track.getInfo&artist=${artistName}&track=${trackName}&user=RJ&api_key=${API_KEY}&format=json`);
@@ -44,6 +61,12 @@ export async function fetchTrackGenres (artistName:string, trackName: string) {
     }
 };
 
+
+/**
+ * Fitchs artist genres.
+ * @param artistName - artist name.
+ * @returns fetched artist genres.
+ */
 export async function fetchArtistGenres (artistName:string) {
     try {
         const data = await fetchAPI(`${API_URL}?method=artist.getInfo&artist=${artistName}&user=RJ&api_key=${API_KEY}&format=json`);
@@ -53,6 +76,13 @@ export async function fetchArtistGenres (artistName:string) {
     }
 };
 
+
+/**
+ * Search by input value.
+ * @param value - value for search.
+ * @param section - section of search.
+ * @returns searched data for artists/tracks/albums.
+ */
 export async function fetchSearchData(value: string, section: string) {
     try{
         const data = await fetchAPI(`${API_URL}?method=${section}.search&${section}=${value}&api_key=${API_KEY}&limit=${SEARCH_LIMIT}&format=json`);

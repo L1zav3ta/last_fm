@@ -7,6 +7,12 @@ interface IArtistsSearch {
     artists:  TArtist[];
 };
 
+
+/**
+ * Component for artistList.
+ * @param props - object of artists array.
+ * @returns HTML Element with artists.
+ */
 export const ArtistsList = (props: IArtistsSearch) => {
     const {artists} = props;
     return (

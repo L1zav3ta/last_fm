@@ -7,6 +7,12 @@ interface IAlbumsSearch {
     albums:  TAlbum[];
 };
 
+
+/**
+ * Component for albumsList.
+ * @param props - object of albums array.
+ * @returns HTML Element with albums.
+ */
 export const AlbumsList = (props: IAlbumsSearch) => {
     const {albums} = props;
     return(

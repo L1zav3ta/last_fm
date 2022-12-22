@@ -4,6 +4,11 @@ import { Main } from './components/Main/Main';
 import { Search } from './components/SearchPage/Search';
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 
+
+/**
+ * Main function of app.
+ * @returns app content.
+ */
 function App() {
   return (
     <Router>

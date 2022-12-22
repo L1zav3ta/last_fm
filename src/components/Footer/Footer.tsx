@@ -1,6 +1,11 @@
 import { Link } from 'react-router-dom'
 import logo from './images/footer_logo.png'
 
+
+/**
+ * Component for footer of app.
+ * @returns footer HTML eLement of app.
+ */
 export const Footer = () => {
     return (
         <footer className="footer">

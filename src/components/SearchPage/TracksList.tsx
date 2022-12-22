@@ -7,6 +7,12 @@ interface ITracksSearch {
     tracks:  TTrack[];
 }
 
+
+/**
+ * Component for tracks table.
+ * @param props - object with tracks.
+ * @returns table with found tracks.
+ */
 export const TracksList = (props: ITracksSearch) => {
     const {tracks} = props;
     return(

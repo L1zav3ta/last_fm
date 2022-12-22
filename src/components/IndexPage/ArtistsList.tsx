@@ -4,6 +4,10 @@ import { TArtist } from "../../types/TArtist";
 import { Artist } from "./Artist";
 
 
+/**
+ * Component for artistsList.
+ * @returns HTML Element with artists.
+ */
 export const ArtistsList = () => {
     const [artists, setArtists] = useState<TArtist[]>([]);
 

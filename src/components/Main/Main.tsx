@@ -1,6 +1,11 @@
 import { ArtistsList } from "../IndexPage/ArtistsList";
 import { TracksList } from "../IndexPage/TracksList";
 
+
+/**
+ * Component for main content of app.
+ * @returns main-content HTML eLement of app.
+ */
 export const Main = () => {
     return (
         <main className="main">

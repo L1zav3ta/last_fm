@@ -17,10 +17,23 @@ interface IData {
     tracks: TTrack[];
 };
 
+
+/**
+ * Search by the entered value.
+ * @param {*} value - searched value.
+ * @param {*} section - section for the search (artists, albums or tracks).
+ * @returns all content which contains searched value (limit of search = 8).
+ */
 async function search (value: string, section: string) {
     return fetchSearchData(value, section)
 };
 
+
+/**
+ * Get artist list.
+ * @param data - fetched artist data.
+ * @returns artists list with type of TArtist[].
+ */
 function getAtrists(data: any): TArtist[] {
     if (!data) return []
     const artists = data.results.artistmatches.artist.map((item: {name: string, image: any, listeners: number}) => {
@@ -34,6 +47,12 @@ function getAtrists(data: any): TArtist[] {
     return artists;
 };
 
+
+/**
+ * Get album list.
+ * @param data - fetched album data.
+ * @returns albums list with type of TAlbum[].
+ */
 function getAlbums(data: any): TAlbum[] {
     if (!data) return []
     const albums = data.results.albummatches.album.map((item: {name: string, image: any, artist: string}) => {
@@ -47,6 +66,12 @@ function getAlbums(data: any): TAlbum[] {
     return albums;
 };
 
+
+/**
+ * Get track list.
+ * @param data - fetched track data.
+ * @returns tracks list with type of TTrack[].
+ */
 function getTracks(data: any): TTrack[] {
     if (!data) return []
     const tracks = data.results.trackmatches.track.map((item: {name: string, image: any, artist: string}) => {
@@ -60,6 +85,11 @@ function getTracks(data: any): TTrack[] {
     return tracks;
 };
 
+
+/**
+ * Component for search.
+ * @returns HTML Element with search results.
+ */
 export const Search = () => {
     const [searchData, setSearchdata] = useState<IData>({
         artists: [],

@@ -9,6 +9,12 @@ interface IGenresListProps {
     trackName?: string;
 };
 
+
+/**
+ * Component for genresList of artist/track.
+ * @param props - object with data for fetch genres.
+ * @returns HTML Element with genres.
+ */
 export const GenresList = (props: IGenresListProps) => {
     const {artistName, trackName} = props;
     const [genres, setGenres] = useState<TGenre[]>([]);

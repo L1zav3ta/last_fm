@@ -2,6 +2,11 @@ import { TTrack } from "../../types/TTrack";
 import { GenresList } from "../Genre/GenresList";
 
 
+/**
+ * Component for track.
+ * @param props - object with info about track.
+ * @returns HTML Element with track.
+ */
 export const Track = (props: TTrack) => {
     const {trackName, trackImgSrc, artistName} = props;
     return (

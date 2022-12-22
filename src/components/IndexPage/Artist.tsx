@@ -2,6 +2,11 @@ import { GenresList } from "../Genre/GenresList";
 import { TArtist } from "../../types/TArtist";
 
 
+/**
+ * Component for artist.
+ * @param props - object with info about artist.
+ * @returns HTML Element with artist.
+ */
 export const Artist = (props: TArtist) => {
     const {artistName, artistImgSrc} = props;
     return (

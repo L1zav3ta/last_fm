@@ -2,6 +2,11 @@ import { Link } from "react-router-dom";
 import { TTrack } from "../../types/TTrack";
 
 
+/**
+ * Component for track.
+ * @param props - object with info about track.
+ * @returns row of table with found track.
+ */
 export const Track = (props: TTrack) => {
     const {trackName, trackImgSrc, artistName} = props;
     return(

@@ -8,6 +8,12 @@ interface ISearchData {
     onReset: (value: string) => void;
 }
 
+
+/**
+ * Component for search form.
+ * @param props - object with needed functions.
+ * @returns HTML Elemnt with search form.
+ */
 export const SearchForm = (props: ISearchData) => {
     const {onSubmit, onReset} = props;
     const [value, setValue] = useState<string>('');

@@ -7,6 +7,12 @@ interface IContent {
     imgSrc: string;
 };
 
+
+/**
+ * Component for content of album/artist search results.
+ * @param props - object with info about artist/album.
+ * @returns HTML Element with info about artist/album.
+ */
 export const Content = (props: IContent) => {
     const {title, subtitle, imgSrc} = props;
     return (

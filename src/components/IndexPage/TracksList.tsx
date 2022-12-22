@@ -4,6 +4,10 @@ import { TTrack } from "../../types/TTrack";
 import { Track } from "./Track";
 
 
+/**
+ * Component for tracksList.
+ * @returns HTML Element with tracks.
+ */
 export const TracksList = () => {
     const [tracks, setTracks] = useState<TTrack[]>([]);
 

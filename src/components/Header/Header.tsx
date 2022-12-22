@@ -2,9 +2,13 @@ import logo from './images/logo.png';
 import player from './images/player_default_album.png';
 import search from './images/search.png';
 import avatar from './images/avatar.png';
-
 import { Link } from 'react-router-dom';
 
+
+/**
+ * Component for header of app.
+ * @returns header HTML eLement of app.
+ */
 export const Header = () => {
     return (
         <header className="header">
