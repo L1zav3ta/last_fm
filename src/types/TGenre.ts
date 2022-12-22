@@ -1,3 +1,3 @@
 export type TGenre = { 
-    genreName: string,
+    genreName: string;
 };

@@ -4,4 +4,4 @@ export const NotResults = () => {
             <p className='main__search-content__block-item'>Not Results</p>
         </section>
     );
-}
+};

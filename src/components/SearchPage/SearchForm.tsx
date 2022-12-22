@@ -2,6 +2,7 @@ import searchBtn from './images/button_search.png'
 import resetBtn from './images/button_reset.png'
 import {  useState } from 'react';
 
+
 interface ISearchData {
     onSubmit: (value: string) => void;
     onReset: (value: string) => void;
@@ -43,4 +44,4 @@ export const SearchForm = (props: ISearchData) => {
             </button>
         </form>
     )
-}
+};

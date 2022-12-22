@@ -6,16 +6,59 @@ import { ArtistsList } from './ArtistsList';
 import { TracksList } from './TracksList';
 import { AlbumsList } from './AlbumsList';
 import { NotResults } from './NotResults';
+import { TArtist } from '../../types/TArtist';
+import { TTrack } from '../../types/TTrack';
+import { TAlbum } from '../../types/TAlbum';
+
+
+interface IData {
+    artists: TArtist[];
+    albums: TAlbum[];
+    tracks: TTrack[];
+};
 
 async function search (value: string, section: string) {
     return fetchSearchData(value, section)
-}
-   
-interface IData {
-    artists: any[],
-    albums: any[],
-    tracks: any[],
-}
+};
+
+function getAtrists(data: any): TArtist[] {
+    if (!data) return []
+    const artists = data.results.artistmatches.artist.map((item: {name: string, image: any, listeners: number}) => {
+        const artist: TArtist = {
+            artistName: item.name,
+            artistImgSrc: item.image[2]['#text'],
+            listeners: item.listeners,
+        }
+        return artist
+    });
+    return artists;
+};
+
+function getAlbums(data: any): TAlbum[] {
+    if (!data) return []
+    const albums = data.results.albummatches.album.map((item: {name: string, image: any, artist: string}) => {
+        const album: TAlbum = {
+            albumName: item.name,
+            albumImgSrc: item.image[2]['#text'],
+            artistName: item.artist,
+        }
+        return album
+    });
+    return albums;
+};
+
+function getTracks(data: any): TTrack[] {
+    if (!data) return []
+    const tracks = data.results.trackmatches.track.map((item: {name: string, image: any, artist: string}) => {
+        const track: TTrack = {
+            trackName: item.name,
+            trackImgSrc: item.image[1]['#text'],
+            artistName: item.artist,
+        }
+        return track
+    });
+    return tracks;
+};
 
 export const Search = () => {
     const [searchData, setSearchdata] = useState<IData>({
@@ -47,14 +90,16 @@ export const Search = () => {
                     if (res.status === 'fulfilled') 
                         return res.value
                 }));
+
                 if(!data.length) 
                     return [];
+                
                 setSearchdata({
-                    artists: data[0].results.artistmatches.artist,
-                    albums: data[1].results.albummatches.album,
-                    tracks: data[2].results.trackmatches.track
-                })
-                setValue(text)
+                    artists: getAtrists(data[0]),
+                    albums: getAlbums(data[1]),
+                    tracks: getTracks(data[2]),
+                });
+                setValue(text);
             });
         } catch {
             console.log('Error: Can not fetch search');
@@ -71,7 +116,6 @@ export const Search = () => {
                         </h1>
                         : <></>
                     }
-                    
                     <nav>
                         <ul className="main__search-nav-list">
                             <li className="main__search_nav-item"><Link to="/">Top Results</Link></li>
@@ -121,4 +165,4 @@ export const Search = () => {
             </div>
         </main>
     )
-}
+};
