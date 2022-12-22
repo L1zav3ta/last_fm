@@ -3,6 +3,7 @@ import { fetchArtistGenres, fetchTrackGenres } from "../../Api";
 import { TGenre } from "../../types/TGenre";
 import { Genre } from "./Genre";
 
+
 interface IGenresListProps {
     artistName: string;
     trackName?: string;

@@ -1,13 +1,8 @@
+import { TTrack } from "../../types/TTrack";
 import { GenresList } from "../Genre/GenresList";
 
 
-interface ITrackProps {
-    trackName: string;
-    trackImgSrc: string;
-    artistName: string;
-};
-
-export const Track = (props: ITrackProps) => {
+export const Track = (props: TTrack) => {
     const {trackName, trackImgSrc, artistName} = props;
     return (
         <li className="main__tracks-item">
