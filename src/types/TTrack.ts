@@ -1,5 +1,5 @@
 export type TTrack = {
-    image: any;
-    name: string;
-    artist: any;
-}
+    trackName: string,
+    trackImgSrc: any,
+    artistName: any,
+};

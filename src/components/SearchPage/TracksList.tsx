@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { NotResults } from "./NotResults";
 import { Track } from "./Track";
 
 interface ITracksSearch {
@@ -7,14 +6,6 @@ interface ITracksSearch {
 }
 
 export const TracksList = (props: ITracksSearch) => {
-    // if(!props.tracks.length) 
-    //     return (
-    //         <section className="main__section">
-    //             <h2 className="main__search-content__title"><Link to="/" className="link">Tracks</Link></h2>
-    //             <NotResults/>            
-    //         </section>    
-    //     );
-
     return(
         <section className="main__section">
             <h2 className="main__search-content__title"><Link to="/" className="link">Tracks</Link></h2>

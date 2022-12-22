@@ -1,34 +1,25 @@
-import { useEffect, useState } from "react";
-import { fetchTrackGenres } from "../../Api";
-import { TTrack } from "../../types/TTrack";
-import { GenresList } from "../GenresList";
+import { GenresList } from "../Genre/GenresList";
 
-export const Track = (props: TTrack) => {
-    const {image, name, artist} = props;
-    const [genres, setGenres] = useState<string[]>([]);
 
-    useEffect(() => {
-        fetchTrackGenres(artist,name)
-        .then(
-            (result) => {
-                if(result == undefined) return
+interface ITrackProps {
+    trackName: string,
+    trackImgSrc: string,
+    artistName: string,
+};
 
-                const genresNames = result.map((genre: { name: string }) => genre.name)
-                setGenres(genresNames)
-            }
-        );
-    }, []);
-
+export const Track = (props: ITrackProps) => {
+    const {trackName, trackImgSrc, artistName} = props;
     return (
         <li className="main__tracks-item">
-            <img className="track-img" src={image} alt="Track Avatar"/>
+            <img className="track-img" src={trackImgSrc} alt="Track Avatar"/>
             <div className="track-description">
-                <h3 className="track-name">{name}</h3>
-                <p className="track-artist-name">{artist}</p>
+                <h3 className="track-name">{trackName}</h3>
+                <p className="track-artist-name">{artistName}</p>
                 <GenresList 
-                    genres={genres}
+                    artistName={artistName}
+                    trackName={trackName}
                 />
             </div>
         </li>
     );
-}
+};

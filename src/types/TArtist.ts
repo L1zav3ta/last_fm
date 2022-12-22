@@ -1,4 +1,4 @@
 export type TArtist = {
-    image: any;
-    name: string;
-}
+    artistName: string,
+    artistImgSrc: string,
+};

@@ -15,7 +15,7 @@ async function fetchAPI(url: string) {
 	const response = await fetch(url);
 	const data = await response.json();
 	return data;
-}
+};
 
 export async function fetchArtists() {
     try {
@@ -24,7 +24,7 @@ export async function fetchArtists() {
     } catch (err) {
         console.log('Error: Can not fetch artists');
     }
-}
+};
 
 export async function fetchTracks () {
     try {
@@ -33,27 +33,25 @@ export async function fetchTracks () {
     } catch {
         console.log('Error: Can not fetch tracks');
     }
-}
+};
 
 export async function fetchTrackGenres (artistName:string, trackName: string) {
     try {
         const data = await fetchAPI(`${API_URL}?method=track.getInfo&artist=${artistName}&track=${trackName}&user=RJ&api_key=${API_KEY}&format=json`);
         return data.track.toptags.tag;
-        
     } catch (err) {
         console.log(`Error: Can not fetch tags for track '${trackName}'`);
     }
-}
+};
 
 export async function fetchArtistGenres (artistName:string) {
     try {
         const data = await fetchAPI(`${API_URL}?method=artist.getInfo&artist=${artistName}&user=RJ&api_key=${API_KEY}&format=json`);
         return data.artist.tags.tag;
-        
     } catch (err) {
         console.log(`Error: Can not fetch tags for artist '${artistName}'`);
     }
-}
+};
 
 export async function fetchSearchData(value: string, section: string) {
     try{
@@ -62,6 +60,4 @@ export async function fetchSearchData(value: string, section: string) {
     } catch (err) {
         console.log(`Error: Can not fetch search for ${section} '${value}'`);
     }
-
-    
-}
+};
