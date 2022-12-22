@@ -78,6 +78,8 @@ export const Search = () => {
     }
 
     const handleSubmit = (text: string) => {
+        if (!text) return;
+
         try {
             Promise.allSettled([
                 search(text, 'artist'),
@@ -88,11 +90,11 @@ export const Search = () => {
                 const data: any[] = [];
                 data.push(...results.map(res => {
                     if (res.status === 'fulfilled') 
-                        return res.value
+                        return res.value;
                 }));
 
                 if(!data.length) 
-                    return [];
+                    return;
                 
                 setSearchdata({
                     artists: getAtrists(data[0]),
